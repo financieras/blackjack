@@ -7,7 +7,7 @@ for(var i=0;i<palos.length;i++){
   for(var j=1;j<=13;j++){
     var carta={palo:palos[i],valor:j};
     baraja[baraja.length]=carta;
-    document.write(palo[i]+j+"<br>";);
+    document.write(palos[i]+j+"<br>";);
   }
 }
 document.write("hola");
