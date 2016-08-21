@@ -1,5 +1,5 @@
 // Simulador simplificado del juego de Blackjack
-
+document.write('<h1>'+"Simulación básica del juego de Blackjack"+'</h1>'); 
 // Objeto baraja, conjunto de cartas que tienen un palo y un valor
 var baraja=[];
 var palos=["c","p","t","d"];
@@ -11,4 +11,3 @@ for(var i=0;i<palos.length;i++){
     document.write("\n");
   }
 }
-document.write("hola");
