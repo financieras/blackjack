@@ -10,4 +10,4 @@ for(var i=0;i<palos.lenght;i++){
     document.write(i+j);
   }
 }
-
+document.write("hola");
