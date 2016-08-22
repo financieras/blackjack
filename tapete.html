@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+    width:100px;
+}
+</style>
+</head>
+<body>
+
+
+
+<h2>Simulador básico de BlackJack</h2>
+
+<table>
+  
+  <tr>
+    <th>Croupier</th>
+    <td>4p</td>
+    <td>??</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td style="border: none">puntos: </td>
+  </tr>
+  <tr>
+    <th>Jugador</th>
+    <td>7d</td>
+    <td>12t</td>
+    <td>--</td>
+    <td>--</td>
+    <td>--</td>
+    <td>puntos: </td>
+  </tr>
+</table>
+<br>
+<h3>Reglas simplificadas</h3>
+<p>Inicialmente el Croupier reparte dos cartas al jugador, y dos para él. Las cartas se muestran salvo la segunda del Croupier que permanece boca abajo.</p>
+<p>Se trata de llegar lo más cerca de 21 puntos sin pasarse. Si inicialmente el jugador tienen 21 puntos se dice que ha conseguido BlackJack y gana. Las puntuaciones son las siguientes:</p>
+
+<ul>
+  <li>1 AS puede valer 1 u 11 puntos según se desee</li>
+  <li>2 = 2 puntos</li>
+  <li>3 = 3 puntos</li>
+  <li>4 = 4 puntos</li>
+  <li>5 = 5 puntos</li>
+  <li>6 = 6 puntos</li>
+  <li>7 = 7 puntos</li>
+  <li>7 = 7 puntos</li>
+  <li>8 = 8 puntos</li>
+  <li>9 = 9 puntos</li>
+  <li>10 = 10 puntos</li>
+  <li>11 = 10 puntos. J=Jack es conocida como jota o sota</li>
+  <li>12 = 10 puntos. Q=Queen es la reina</li>
+  <li>13 = 10 puntos. K=King el rey</li>
+</ul>
+<p>Comienza jugando el jugador que tiene que decidir si se planta o pide carta. Si aún no ha llegado a 21 puntos puede pedir nueva carta y así hasta que se plante.</p>
+<p>Luego viene el tuerno del Croupier que levanta su segunda carta y está obligado a:</p>
+<ul>
+  <li>pedir carta si tiene una puntuación igual o menor a 16</li>
+  <li>plantarse si tiene una puntuación igual o mayor a 17</li>
+</ul>
+
+<p>Si al levantar su segunda carta el Croupier tiene 21 puntos se dice que tiene BlackJack y gana el juego.</p>
+
+<p>Si ambos jugadores se han plantado y ninguno ha superado los 21 puntos ganará el que tenga más puntos.</p>
+
+
+
+</body>
+</html>
