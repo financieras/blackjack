@@ -12,4 +12,4 @@ for(var i=0;i<palos.length;i++){
     //document.write("\n"); permite un cambio de línea. equivale a <br> en html
   }
 }
-document.write(texto.substring(1, texto.length-1));
+document.write(texto.substring(0, texto.length-1));
