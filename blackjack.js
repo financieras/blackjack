@@ -10,6 +10,6 @@ for(var i=0;i<palos.length;i++){
     document.write();
   }
 }
-for(var j=1;j<=13;j++){
+for(var j=0;j<13;j++){
   baraja[j];
 }
