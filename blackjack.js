@@ -8,8 +8,8 @@ for(var i=0;i<palos.length;i++){
   for(var j=1;j<=13;j++){
     var carta={palo:palos[i],valor:j};
     baraja[baraja.length]=carta;
-    texto=texto+(j+palos[i]+", ");
+    texto=texto+(j+palos[i]+" - ");
     //document.write("\n"); permite un cambio de línea. equivale a <br> en html
   }
 }
-document.write(texto.substring(0, texto.length-1));
+document.write(texto.substring(0, texto.length-3));
