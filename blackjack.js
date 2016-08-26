@@ -31,12 +31,12 @@ function generaBaraja(){                          //Función que da naipes con 5
 }
 
 function blackjack(){
+  jugando = true;
   generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
   for(i=0;i<52;i++){
     document.write(naipes[i].palo+naipes[i].valor+" ");
   }
   document.write("<br>");
-  jugando = true;
   manoJ[0]=naipes[0];                             //la primera carta de la baraja va para el Jugador
   manoJ[1]=naipes[1];                             //la segunda carta de la baraja va para el Jugador
   usadas=2;                                       //ya se han usado 2 cartas del total de 52
@@ -44,7 +44,7 @@ function blackjack(){
   document.write("<br>");
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
   document.write("puntos iniciales del Jugador: "+totalJ);
-  //blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
+  blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
 }
 
 function puntuar(mano){                           //vamos a calcular la puntuación de una mano
@@ -63,5 +63,22 @@ function puntuar(mano){                           //vamos a calcular la puntuaci
   return puntos;
 }
 
+function blackjackJ(){                            //analiza si el jugador ha hecho blackjack a inicio
+	if(totalJ===21){                                //veamos el resultado del juego si el Jugador tiene Blackjack
+    finalJ();                                     //llamamos a la función finalJ. A esta función tb se llama desde pideJ
+    document.write("El Jugador es el ganador porque ha obtenido Blackjack.");
+	}
+}
+
+function finalJ(){                                //a esta función la llaman blacjackJ y pideJ
+		jugando=false;                                //anotamos que termina el juego
+		var texto="";                                 //la variable texto se construye concatenando una frase y la mano del Juegador
+    for(var i=0;i<manoJ.length;i++){
+    	texto=texto+manoJ[i].palo+manoJ[i].valor+" - ";
+    }
+    texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
+    document.write("La mano del Jugador es:  "+texto);
+    document.write("La puntuación del Jugador es "+totalJ);
+}
 
 blackjack();
