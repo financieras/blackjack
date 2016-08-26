@@ -46,6 +46,21 @@ function blackjack(){
   document.write("puntos iniciales del Jugador: "+totalJ);
   document.write("<br>");
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
+  while(jugando){                                 //mientras el juego continúe
+    pideJ();                                      //llamamos a una función que determina si pide el Jugador y cuantas veces
+  }
+}
+
+function pideJ(){                                 //veamos si pide el Jugador y cuantas veces lo hace
+  while (totalJ<17){
+    usadas++;                                     //se ha usado una nueva carta: usadas=usadas+1 
+    manoJ[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Jugador
+    totalJ=puntuar(manoJ);
+  }
+  if(totalJ>21){                                  //ahora veamos si el Jugador se ha pasado o es el turno del Croupier
+    finalJ();
+    document.write("<br>+El Jugador se ha pasado. Gana el Croupier.");
+  }
 }
 
 function puntuar(mano){                           //vamos a calcular la puntuación de una mano
