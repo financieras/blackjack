@@ -58,7 +58,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
     totalJ=puntuar(manoJ);
     if(totalJ>21){                                  //ahora veamos si el Jugador se ha pasado o es el turno del Croupier
       finalJ();
-      document.write("<br>+El Jugador se ha pasado. Gana el Croupier.");
+      document.write("<br>El Jugador se ha pasado. Gana el Croupier.");
     }
   }
 }
