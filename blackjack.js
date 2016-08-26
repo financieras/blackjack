@@ -55,7 +55,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
     usadas++;                                     //se ha usado una nueva carta: usadas=usadas+1 
     manoJ[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Jugador
     totalJ=puntuar(manoJ);
-    finalJ;                                       //mientras existen iteraciones no es final de J pero nos interesa que imprima resultados
+    finalJ();                                       //mientras existen iteraciones no es final de J pero nos interesa que imprima resultados
   }
   if(totalJ>21){                                  //ahora veamos si el Jugador se ha pasado o es el turno del Croupier
     jugando=false;                                 //anotamos que termina el juego
@@ -63,8 +63,8 @@ function pideJ(){                                 //veamos si pide el Jugador y 
     document.write("<br>El Jugador se ha pasado. Gana el Croupier.");
   } 
   else {
-    document.write("<br>El Jugador se planta");
-    finalJ;                                       //no el final del juego, simplemente del Jugador, queremos que se imprima su resultado 
+    document.write("<br>El Jugador se planta.");
+    finalJ();                                       //no el final del juego, simplemente del Jugador, queremos que se imprima su resultado 
   }
 }
 
