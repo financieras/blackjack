@@ -64,7 +64,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   } 
   else {
     document.write("<br>El Jugador se planta.");
-    finalJ();                                       //no el final del juego, simplemente del Jugador, queremos que se imprima su resultado 
+    //finalJ();                                       //no el final del juego, simplemente del Jugador, queremos que se imprima su resultado 
   }
 }
 
