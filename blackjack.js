@@ -53,6 +53,7 @@ function blackjack(){
 
 function pideJ(){                                 //veamos si pide el Jugador y cuantas veces lo hace
   while (totalJ<17){
+    document.write("<br>Pide nueva carta el Jugado.")
     usadas++;                                     //se ha usado una nueva carta: usadas=usadas+1 
     manoJ[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Jugador
     totalJ=puntuar(manoJ);
