@@ -32,8 +32,10 @@ function generaBaraja(){                          //Función que da naipes con 5
 }
 
 function blackjack(){
-  generaBaraja();	
-  document.write(naipes[0]);  
+  generaBaraja();
+  for(i=0;i<52;i++){
+    document.write(naipes[i].palo+naipes[i].valor+" ");
+  }
 }
 
 
