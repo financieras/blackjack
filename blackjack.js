@@ -75,7 +75,7 @@ function finalJ(){                                //a esta función la llaman bl
 		jugando=false;                                //anotamos que termina el juego
 		var texto="";                                 //la variable texto se construye concatenando una frase y la mano del Juegador
     for(var i=0;i<manoJ.length;i++){
-    	texto=texto+manoJ[i].palo+manoJ[i].valor+" - ";
+    	texto+=manoJ[i].palo+manoJ[i].valor+" - ";            //+= es para hacer un acumulador de la variable texto
     }
     texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
     document.write("La mano del Jugador es:  "+texto);
