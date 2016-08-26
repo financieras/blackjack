@@ -102,7 +102,7 @@ function blackjackJ(){                            //analiza si el jugador ha hec
   if(totalJ===21){                                //veamos el resultado del juego si el Jugador tiene Blackjack
     jugando=false;                                 //anotamos que termina el juego
     finalJ();                                     //llamamos a la función finalJ. A esta función tb se llama desde pideJ
-    document.write("El Jugador es el ganador porque ha obtenido Blackjack.");
+    document.write("<br>El Jugador es el ganador porque ha obtenido Blackjack.");
   }
 }
 
