@@ -33,7 +33,7 @@ function generaBaraja(){                          //Función que da naipes con 5
 
 function blackjack(){
   generaBaraja();	
-  document.write(naipes);  
+  document.write(naipes[0]);  
 }
 
 
