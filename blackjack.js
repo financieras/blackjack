@@ -34,13 +34,14 @@ function blackjack(){
   generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
   for(i=0;i<52;i++){
     document.write(naipes[i].palo+naipes[i].valor+" ");
+    document.write("<br>");
   }
   jugando = true;
   manoJ[0]=naipes[0];                             //la primera carta de la baraja va para el Jugador
   manoJ[1]=naipes[1];                             //la segunda carta de la baraja va para el Jugador
   usadas=2;                                       //ya se han usado 2 cartas del total de 52
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
-  document.write("mano inicial del Jugador:  "+manoJ[0]+" "+manoJ[1]);
+  document.write("mano inicial del Jugador:  "+manoJ[0]+" "+manoJ[1]+/n);
   document.writ("puntos iniciales del Jugador: "+totalJ);
   //blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
 }
