@@ -41,7 +41,7 @@ function blackjack(){
   manoJ[1]=naipes[1];                             //la segunda carta de la baraja va para el Jugador
   usadas=2;                                       //ya se han usado 2 cartas del total de 52
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
-  document.write("mano inicial del Jugador:  "+manoJ[0]+" "+manoJ[1]+/n);
+  document.write("mano inicial del Jugador:  "+manoJ[0]+" "+manoJ[1]);
   document.writ("puntos iniciales del Jugador: "+totalJ);
   //blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
 }
