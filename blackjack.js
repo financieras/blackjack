@@ -1,5 +1,5 @@
 // Simulador simplificado del juego de Blackjack
-document.write('<h1>'+"Simulación básica del juego de Blackjack"+'</h1>'); 
+document.write("<h1>Simulación básica del juego de Blackjack</h1>"); 
 //Juego de Blackjack. Simulación básica del juego, programado para ejecutar en la consola
 
                                                   //creación de variables globales
@@ -40,11 +40,9 @@ function blackjack(){
   manoJ[0]=naipes[0];                             //la primera carta de la baraja va para el Jugador
   manoJ[1]=naipes[1];                             //la segunda carta de la baraja va para el Jugador
   usadas=2;                                       //ya se han usado 2 cartas del total de 52
-  document.write("mano inicial del Jugador:  "+manoJ[0].palo+manoJ[0].valor+" "+manoJ[1].palo+manoJ[1].valor);
-  document.write("<br>");
+  document.write("<br>mano inicial del Jugador:  "+manoJ[0].palo+manoJ[0].valor+" "+manoJ[1].palo+manoJ[1].valor);
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
-  document.write("puntos iniciales del Jugador: "+totalJ);
-  document.write("<br>");
+  document.write("<br>puntos iniciales del Jugador: "+totalJ);
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
 //  while(jugando){                                 //mientras el juego continúe
     pideJ();                                      //llamamos a una función que determina si pide el Jugador y cuantas veces
@@ -53,7 +51,7 @@ function blackjack(){
 
 function pideJ(){                                 //veamos si pide el Jugador y cuantas veces lo hace
   while (totalJ<17){
-    document.write("El Jugado pide nueva carta.")
+    document.write("<br>El Jugado pide nueva carta.")
     usadas++;                                     //se ha usado una nueva carta: usadas=usadas+1 
     manoJ[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Jugador
     totalJ=puntuar(manoJ);
@@ -100,10 +98,8 @@ function finalJ(){                               //a esta función la llaman bla
     texto+=manoJ[i].palo+manoJ[i].valor+" - ";            //+= es para hacer un acumulador de la variable texto
   }
   texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
-  document.write("La mano del Jugador es:  "+texto);
-  document.write("<br>");
-  document.write("La puntuación del Jugador es "+totalJ);
-  document.write("<br>");
+  document.write("<br>La mano del Jugador es:  "+texto);
+  document.write("<br>La puntuación del Jugador es "+totalJ);
 }
 
 blackjack();
