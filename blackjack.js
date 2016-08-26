@@ -11,7 +11,6 @@ var jugando= false;                               //indica si estoy jugando o el
 var totalJ=0;                                     //maxima puntuación del Jugador considerando el as como 1 o como 11
 var totalC=0;                                     //maxima puntuación del Croupier considerando el as como 1 o como 11
 
-
 function generaBaraja(){                          //Función que da naipes con 52 cartas barajeadas
   var palos=["c","d","p","t"];                    //1º: generamos la baraja ordenada
   for(i=0;i<palos.length;i++){
@@ -32,14 +31,10 @@ function generaBaraja(){                          //Función que da naipes con 5
 }
 
 function blackjack(){
-  generaBaraja();
+  generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
   for(i=0;i<52;i++){
     document.write(naipes[i].palo+naipes[i].valor+" ");
   }
-}
-
-function blackjack(){
-  generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
   jugando = true;
   manoJ[0]=naipes[0];                             //la primera carta de la baraja va para el Jugador
   manoJ[1]=naipes[1];                             //la segunda carta de la baraja va para el Jugador
@@ -47,6 +42,7 @@ function blackjack(){
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
   document.write("mano inicial del Jugador:  "+manoJ[0]+" "+manoJ[1]);
   document.writ("puntos iniciales del Jugador: "+totalJ);
+  //blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
 }
 
 function puntuar(mano){                           //vamos a calcular la puntuación de una mano
