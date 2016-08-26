@@ -42,7 +42,7 @@ function blackjack(){
   usadas=2;                                       //ya se han usado 2 cartas del total de 52
   document.write("<br>Mano inicial del Jugador:  "+manoJ[0].palo+manoJ[0].valor+" - "+manoJ[1].palo+manoJ[1].valor);
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
-  document.write("<br>puntos iniciales del Jugador: "+totalJ);
+  document.write("<br>Puntos iniciales del Jugador: "+totalJ);
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
 //  while(jugando){                                 //mientras el juego continúe
     pideJ();                                      //llamamos a una función que determina si pide el Jugador y cuantas veces
@@ -69,7 +69,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
 }
 
 function finalJ(){                               //a esta función la llaman blacjackJ y pideJ
-  var texto="";                                  //la variable texto se construye concatenando una frase y la mano del Juegador
+  var texto=" ";                                  //la variable texto se construye concatenando una frase y la mano del Juegador
   for(var i=0;i<manoJ.length;i++){
     texto+=manoJ[i].palo+manoJ[i].valor+" - ";            //+= es para hacer un acumulador de la variable texto
   }
