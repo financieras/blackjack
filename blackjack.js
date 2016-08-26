@@ -34,8 +34,8 @@ function blackjack(){
   generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
   for(i=0;i<52;i++){
     document.write(naipes[i].palo+naipes[i].valor+" ");
-    document.write("<br>");
   }
+  document.write("<br>");
   jugando = true;
   manoJ[0]=naipes[0];                             //la primera carta de la baraja va para el Jugador
   manoJ[1]=naipes[1];                             //la segunda carta de la baraja va para el Jugador
