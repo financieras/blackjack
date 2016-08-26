@@ -44,6 +44,7 @@ function blackjack(){
   document.write("<br>");
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
   document.write("puntos iniciales del Jugador: "+totalJ);
+  document.write("<br>");
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
 }
 
@@ -78,7 +79,9 @@ function finalJ(){                                //a esta función la llaman bl
     }
     texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
     document.write("La mano del Jugador es:  "+texto);
+    document.write("<br>");
     document.write("La puntuación del Jugador es "+totalJ);
+    document.write("<br>");
 }
 
 blackjack();
