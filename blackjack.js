@@ -68,6 +68,20 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   }
 }
 
+function finalJ(){                               //a esta función la llaman blacjackJ y pideJ
+  var texto="";                                  //la variable texto se construye concatenando una frase y la mano del Juegador
+  for(var i=0;i<manoJ.length;i++){
+    texto+=manoJ[i].palo+manoJ[i].valor+" - ";            //+= es para hacer un acumulador de la variable texto
+  }
+  texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
+  document.write("<br>La mano del Jugador es:  "+texto);
+  document.write("<br>La puntuación del Jugador es "+totalJ);
+}
+
+
+
+
+
 function puntuar(mano){                           //vamos a calcular la puntuación de una mano
   var valor=0;                                    //es el numerito de la carta, es 1, 2, 3,..., 9,10, 11, 12 o 13
   var puntos=0;                                   //son los puntos considerando las figuras como 10
@@ -92,14 +106,6 @@ function blackjackJ(){                            //analiza si el jugador ha hec
   }
 }
 
-function finalJ(){                               //a esta función la llaman blacjackJ y pideJ
-  var texto="";                                  //la variable texto se construye concatenando una frase y la mano del Juegador
-  for(var i=0;i<manoJ.length;i++){
-    texto+=manoJ[i].palo+manoJ[i].valor+" - ";            //+= es para hacer un acumulador de la variable texto
-  }
-  texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
-  document.write("<br>La mano del Jugador es:  "+texto);
-  document.write("<br>La puntuación del Jugador es "+totalJ);
-}
+
 
 blackjack();
