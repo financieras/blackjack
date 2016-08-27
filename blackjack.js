@@ -45,17 +45,18 @@ function blackjack(){
   document.write("<br>Puntos iniciales del Jugador: "+totalJ);
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
   while(jugando){
-  pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
-  while(jugando){                                 //mientras el juego continúe
-	  usadas+=1;                                    //ahora le toca al Croupier 	
-		manoC[0]=naipes[usadas-1];                    //la primera carta de la mano del Croupier
-		usadas+=1;
-	  manoC[1]=naipes[usadas-1];                    //esta es la segunda carta para el Croupier
-		totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
-		pideC();                                      //llamamos a una función que determina si pide el Jugador y cuantas veces
-	}
+    pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
+    while(jugando){                                 //mientras el juego continúe
+      document.write("Le toca el turno a Croupier");
+      usadas+=1;                                    //ahora le toca al Croupier
+      manoC[0]=naipes[usadas-1];                    //la primera carta de la mano del Croupier
+      usadas+=1;
+      manoC[1]=naipes[usadas-1];                    //esta es la segunda carta para el Croupier
+      totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
+      pideC();                                      //llamamos a una función que determina si pide el Jugador y cuantas veces
+    }
   }
-}
+}                                                   //Finaliza la función Blackjack y por tanto finaliza el juego
 
 function pideC(){                                 //REGLA: el Croupier pide con 16 o menos y se planta con 17 o más
     console.log("totalc="+totalC);
@@ -170,7 +171,7 @@ function puntuar(mano){                           //vamos a calcular la puntuaci
 
 function blackjackJ(){                            //analiza si el jugador ha hecho blackjack a inicio
   if(totalJ===21){                                //veamos el resultado del juego si el Jugador tiene Blackjack
-    jugando=false;                                 //anotamos que termina el juego
+    jugando=false;                                //anotamos que termina el juego
     finalJ();                                     //llamamos a la función finalJ. A esta función tb se llama desde pideJ
     document.write("<br>El Jugador es el ganador porque ha obtenido Blackjack.");
   }
