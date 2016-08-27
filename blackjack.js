@@ -153,7 +153,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   else {
     document.write("<br>El Jugador se planta.");
     document.write("<br>la variable jugando es= "+jugando);
-    document.write("<h3>Le toca el turno a Croupier<h3>");
+    document.write("<h3>Le toca el turno a Croupier</h3>");
   }
 }
 
