@@ -133,7 +133,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   var npideJ=0;                                   //cuenta cuantas cartas nuevas pide el jugador
   while (totalJ<17){
     npideJ++;
-    if(npideJ=1){
+    if(npideJ===1){
       document.write("El Jugador pide nueva carta.");
     }
     else {
