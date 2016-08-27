@@ -56,6 +56,14 @@ function blackjack(){
       usadas+=1;
       manoC[1]=naipes[usadas-1];                    //esta es la segunda carta para el Croupier
       totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
+      
+      document.write("<br><h3>Mano inicial del Croupier</h3>");
+      document.write("Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
+      totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
+      document.write("<br>Puntos iniciales del Croupier: "+totalC);
+      
+      
+      
       pideC();                                      //llamamos a una función que determina si pide el Jugador y cuantas veces
     }
   }
@@ -63,49 +71,48 @@ function blackjack(){
 
 function pideC(){                                 //REGLA: el Croupier pide con 16 o menos y se planta con 17 o más
   jugando=false;                                  //el juego ya termina cuando pideC termine de ejecutarse
-    console.log("totalC="+totalC);
-    imprimeManos;
-		return false;
-	while (totalC<17){
-    usadas = usadas + 1;                          //se ha usado una nueva carta 
+  imprimeManos;
+  return false;                                    //???????????????????
+  while (totalC<17){
+    usadas++;                                     //se ha usado una nueva carta 
     manoC[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Croupier
     totalC=puntuar(manoC);
-	}
-	if(totalJ===21){                                  //ahora veamos el resultado final del juego segun los puntos de ambos
+  }
+  if(totalJ===21){                                  //ahora veamos el resultado final del juego segun los puntos de ambos
     if(totalC < 21){
     	imprimeManos;
-    	console.log("El Jugador gana con 21.");
+    	document.write("El Jugador gana con 21.");
     }
   	else if (totalC===21){
   		imprimeManos;
-  		console.log("Se ha producido un empate a 21 puntos.");
+  		document.write("Se ha producido un empate a 21 puntos.");
   	}
   	else if (totalC>21){
   		imprimeManos;
-  		console.log("El Croupier gana con "+totalC);
+  		document.write("El Croupier gana con "+totalC);
   	}
 	}
   else if (totalJ<21){
     if(totalC>21){
     	imprimeManos;
-    	console.log("El Jugador gana. El Croupier se ha pasado");
+    	document.write("El Jugador gana. El Croupier se ha pasado");
     }
     else if(totalC===21){
     	imprimeManos;
-    	console.log("El Jugador pierde porque el Croupier tiene 21");
+    	document.write("El Jugador pierde porque el Croupier tiene 21");
     }
     else if(totalC<21){
     	if(totalJ>totalC){
     		imprimeManos;
-    		console.log("El Jugador gana porque tiene más puntos.");
+    		document.write("El Jugador gana porque tiene más puntos.");
     	}
     	else if(totalJ<totalC){
     		imprimeManos;
-    		console.log("El Jugador pierde porque el Croupier tiene más puntos.");
+    		document.write("El Jugador pierde porque el Croupier tiene más puntos.");
     	}
     	else if(totalJ===totalC){
     		imprimeManos;
-    		console.log("Empate a "+totalJ+" puntos.");
+    		document.write("Empate a "+totalJ+" puntos.");
     	}
     }
   }
@@ -118,15 +125,15 @@ function imprimeManos(){                          //muestra en pantalla las mano
     	texto=texto+manoJ[i].palo+manoJ[i].valor+" - ";
     }
     texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
-    console.log("La mano del Jugador es:  "+texto);
-    console.log("La puntuación del Jugador es "+totalJ);
+    document.write("La mano del Jugador es:  "+texto);
+    document.write("La puntuación del Jugador es "+totalJ);
 		texto="";                                 //ahora toca imprimir la información del Croupier
     for(i=0;i<manoC.length;i++){
     	texto=texto+manoC[i].palo+manoC[i].valor+" - ";
     }
     texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
-    console.log("La mano del Croupier es:  "+texto);
-    console.log("La puntuación del Croupier es "+totalC);
+    document.write("La mano del Croupier es:  "+texto);
+    document.write("La puntuación del Croupier es "+totalC);
 }
 
 function pideJ(){                                 //veamos si pide el Jugador y cuantas veces lo hace
@@ -150,7 +157,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   } 
   else {
     document.write("<br>El Jugador se planta.");
-    document.write("<br>la variable jugando es= "+jugando);
+    //document.write("<br>la variable jugando es= "+jugando);
     document.write("<h3>Le toca el turno a Croupier</h3>");
   }
 }
