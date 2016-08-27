@@ -1,11 +1,10 @@
 // Simulador simplificado del juego de Blackjack
 document.write("<h1>Simulación básica del juego de Blackjack</h1>"); 
-//Juego de Blackjack. Simulación básica del juego, programado para ejecutar en la consola
 
                                                   //creación de variables globales
 var naipes=[];                                    //contendrá la baraja completa y desordenada
 var usadas=0;                                     //cartas usadas de entre las 52 de naipes
-var manoJ=[];                                     //vector con la mano del Jugado
+var manoJ=[];                                     //vector con la mano del Jugador
 var manoC=[];                                     //vector con la mano del Crupier
 var jugando= false;                               //indica si estoy jugando o el juego ha terminado
 var totalJ=0;                                     //maxima puntuación del Jugador considerando el as como 1 o como 11
@@ -33,6 +32,7 @@ function generaBaraja(){                          //Función que da naipes con 5
 function blackjack(){
   jugando = true;
   generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
+  document.write("<h3>Generamos las 52 cartas de la Baraja</h3>");
   for(i=0;i<52;i++){
     document.write(naipes[i].palo+naipes[i].valor+" ");
   }
