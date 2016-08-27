@@ -59,7 +59,8 @@ function blackjack(){
 }                                                   //Finaliza la función Blackjack y por tanto finaliza el juego
 
 function pideC(){                                 //REGLA: el Croupier pide con 16 o menos y se planta con 17 o más
-    console.log("totalc="+totalC);
+  jugando=false;                                  //el juego ya termina cuando pideC termine de ejecutarse
+    console.log("totalC="+totalC);
     imprimeManos;
 		return false;
 	while (totalC<17){
