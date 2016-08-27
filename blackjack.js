@@ -72,7 +72,7 @@ function blackjack(){
 function pideC(){                                 //REGLA: el Croupier pide con 16 o menos y se planta con 17 o más
   jugando=false;                                  //el juego ya termina cuando pideC termine de ejecutarse
   imprimeManos;
-  return false;                                    //???????????????????
+  //return false;                                    //???????????????????
   while (totalC<17){
     usadas++;                                     //se ha usado una nueva carta 
     manoC[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Croupier
@@ -119,21 +119,21 @@ function pideC(){                                 //REGLA: el Croupier pide con 
 }                                                 //aquí termina la función PideC y finaliza el juego
 
 function imprimeManos(){                          //muestra en pantalla las manos del Jugador y del Croupier
-	jugando=false;
-	var texto="";                                   //la variable texto se construye concatenando una frase y al mano del Juegador
-    for(var i=0;i<manoJ.length;i++){
-    	texto=texto+manoJ[i].palo+manoJ[i].valor+" - ";
-    }
-    texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
-    document.write("La mano del Jugador es:  "+texto);
-    document.write("La puntuación del Jugador es "+totalJ);
-		texto="";                                 //ahora toca imprimir la información del Croupier
-    for(i=0;i<manoC.length;i++){
-    	texto=texto+manoC[i].palo+manoC[i].valor+" - ";
-    }
-    texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
-    document.write("La mano del Croupier es:  "+texto);
-    document.write("La puntuación del Croupier es "+totalC);
+  jugando=false;
+  var texto="";                                   //la variable texto se construye concatenando una frase y al mano del Juegador
+  for(var i=0;i<manoJ.length;i++){
+    texto=texto+manoJ[i].palo+manoJ[i].valor+" - ";
+  }
+  texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
+  document.write("La mano del Jugador es:  "+texto);
+  document.write("La puntuación del Jugador es "+totalJ);
+  texto="";                                 //ahora toca imprimir la información del Croupier
+  for(i=0;i<manoC.length;i++){
+    texto=texto+manoC[i].palo+manoC[i].valor+" - ";
+  }
+  texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
+  document.write("La mano del Croupier es:  "+texto);
+  document.write("La puntuación del Croupier es "+totalC);
 }
 
 function pideJ(){                                 //veamos si pide el Jugador y cuantas veces lo hace
