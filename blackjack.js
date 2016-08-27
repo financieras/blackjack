@@ -44,6 +44,7 @@ function blackjack(){
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
   document.write("<br>Puntos iniciales del Jugador: "+totalJ);
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
+  while(jugando){
   pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
   while(jugando){                                 //mientras el juego continúe
 	  usadas+=1;                                    //ahora le toca al Croupier 	
@@ -53,6 +54,7 @@ function blackjack(){
 		totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
 		pideC();                                      //llamamos a una función que determina si pide el Jugador y cuantas veces
 	}
+  }
 }
 
 function pideC(){                                 //REGLA: el Croupier pide con 16 o menos y se planta con 17 o más
