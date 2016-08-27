@@ -137,7 +137,6 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   } 
   else {
     document.write("<br>El Jugador se planta.");
-    //finalJ();                                       //no el final del juego, simplemente del Jugador, queremos que se imprima su resultado 
   }
 }
 
@@ -150,10 +149,6 @@ function finalJ(){                               //a esta función la llaman bla
   document.write("<br>-La mano del Jugador es:   "+texto);
   document.write("<br>La puntuación del Jugador es "+totalJ);
 }
-
-
-
-
 
 function puntuar(mano){                           //vamos a calcular la puntuación de una mano
   var valor=0;                                    //es el numerito de la carta, es 1, 2, 3,..., 9,10, 11, 12 o 13
