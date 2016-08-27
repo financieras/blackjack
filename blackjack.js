@@ -46,7 +46,9 @@ function blackjack(){
   document.write("<br>Puntos iniciales del Jugador: "+totalJ);
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
   while(jugando){
-    document.write("<br><h3>El Jugador pide cartas</h3>");
+    if(totalJ<17){
+      document.write("<h3>El Jugador pide cartas</h3>");
+    }
     pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
     while(jugando){                                 //mientras el juego continúe
       usadas+=1;                                    //ahora le toca al Croupier
