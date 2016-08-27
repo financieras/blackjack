@@ -140,6 +140,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   } 
   else {
     document.write("<br>El Jugador se planta.");
+    document.write("la variable juando es= "+jugando);
   }
 }
 
