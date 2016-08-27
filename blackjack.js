@@ -47,7 +47,7 @@ function blackjack(){
   while(jugando){
     pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
     while(jugando){                                 //mientras el juego continúe
-      document.write("Le toca el turno a Croupier");
+      document.write("<br>Le toca el turno a Croupier");
       usadas+=1;                                    //ahora le toca al Croupier
       manoC[0]=naipes[usadas-1];                    //la primera carta de la mano del Croupier
       usadas+=1;
@@ -140,7 +140,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   } 
   else {
     document.write("<br>El Jugador se planta.");
-    document.write("la variable juando es= "+jugando);
+    document.write("<br>la variable juando es= "+jugando);
   }
 }
 
