@@ -134,9 +134,9 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   while (totalJ<17){
     if(pidoSoloUna){
       document.write("El Jugador pide nueva carta.");
-      pidoSoloUna=false;
     } else {
       document.write("<br>El Jugador pide nueva carta.");
+      pidoSoloUna=false;
     }
     usadas++;                                     //se ha usado una nueva carta: usadas=usadas+1 
     manoJ[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Jugador
