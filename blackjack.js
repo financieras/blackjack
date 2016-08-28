@@ -64,7 +64,7 @@ function blackjack(){
       document.write("Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
       totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
       document.write("<br>Puntos iniciales del Croupier: "+totalC);
-      //document.write("<br>Regla: El Croupier pide con menos de 17 y se planta con 17 o más.");
+      document.write("<br>Regla: El Croupier pide con menos de 17 y se planta con 17 o más.");
       if(totalC<17){
         document.write("<br><h3>El Croupier pide cartas</h3>");
       }
@@ -91,7 +91,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
     }
   	else if (totalC===21){
   		imprimeManos;
-  		document.write("Se ha producido un empate a 21 puntos.");
+  		document.write("<br>Se ha producido un empate a 21 puntos.");
   	}
   	else if (totalC>21){
   		imprimeManos;
@@ -110,7 +110,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
     else if(totalC<21){
     	if(totalJ>totalC){
     		imprimeManos;
-    		document.write("El Jugador gana porque tiene más puntos.");
+    		document.write("<br>El Jugador gana porque tiene más puntos.");
     	}
     	else if(totalJ<totalC){
     		imprimeManos;
@@ -118,7 +118,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
     	}
     	else if(totalJ===totalC){
     		imprimeManos;
-    		document.write("Empate a "+totalJ+" puntos.");
+    		document.write("<br>Empate a "+totalJ+" puntos.");
     	}
     }
   }
