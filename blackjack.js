@@ -50,6 +50,9 @@ function blackjack(){
       document.write("<br><h3>El Jugador pide cartas</h3><br>");
     }
     pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
+                                                    //aqui el Jugador ya ha terminado y le toca el turno al Croupier
+                                                    //salvo que previamente el Jugador hubiera tenido Blackjack o se hubiera pasado
+                                                    //en cuyo caso el jugo ya se ha terminado.
     while(jugando){                                 //mientras el juego continúe
       usadas+=1;                                    //ahora le toca al Croupier
       manoC[0]=naipes[usadas-1];                    //la primera carta de la mano del Croupier
@@ -62,21 +65,25 @@ function blackjack(){
       totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
       document.write("<br>Puntos iniciales del Croupier: "+totalC);
       
+      if(totalC<17){
+        document.write("<br><h3>El Croupier pide cartas</h3><br>");
+      }
       
-      
-      pideC();                                      //llamamos a una función que determina si pide el Jugador y cuantas veces
+      pideC();                                      //llamamos a una función que determina si pide el Croupier y cuantas veces
     }
   }
 }                                                   //Finaliza la función Blackjack y por tanto finaliza el juego
 
 function pideC(){                                 //REGLA: el Croupier pide con 16 o menos y se planta con 17 o más
   jugando=false;                                  //el juego ya termina cuando pideC termine de ejecutarse
-  imprimeManos;
+  //imprimeManos;
   //return false;                                    //???????????????????
   while (totalC<17){
+    document.write("<br>El Croupier pide nueva carta.");
     usadas++;                                     //se ha usado una nueva carta 
     manoC[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Croupier
     totalC=puntuar(manoC);
+    finalC
   }
   if(totalJ===21){                                  //ahora veamos el resultado final del juego segun los puntos de ambos
     if(totalC < 21){
@@ -119,7 +126,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
 }                                                 //aquí termina la función PideC y finaliza el juego
 
 function imprimeManos(){                          //muestra en pantalla las manos del Jugador y del Croupier
-  jugando=false;
+  //jugando=false;
   var texto="";                                   //la variable texto se construye concatenando una frase y al mano del Juegador
   for(var i=0;i<manoJ.length;i++){
     texto=texto+manoJ[i].palo+manoJ[i].valor+" - ";
@@ -136,15 +143,10 @@ function imprimeManos(){                          //muestra en pantalla las mano
   document.write("La puntuación del Croupier es "+totalC);
 }
 
+
 function pideJ(){                                 //veamos si pide el Jugador y cuantas veces lo hace
-  var pidoSoloUna=true;
   while (totalJ<17){
-    if(pidoSoloUna){
-      document.write("El Jugador pide nueva carta.");
-      pidoSoloUna=false;
-    } else {
-      document.write("<br>El Jugador pide nueva carta.");
-    }
+    document.write("<br>El Jugador pide nueva carta.");
     usadas++;                                     //se ha usado una nueva carta: usadas=usadas+1 
     manoJ[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Jugador
     totalJ=puntuar(manoJ);
@@ -152,7 +154,6 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   }
   if(totalJ>21){                                  //ahora veamos si el Jugador se ha pasado o es el turno del Croupier
     jugando=false;                                 //anotamos que termina el juego
-    //finalJ();
     document.write("<br>El Jugador se ha pasado. Gana el Croupier.");
   } 
   else {
@@ -170,6 +171,16 @@ function finalJ(){                               //a esta función la llaman bla
   texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
   document.write("<br>-La mano del Jugador es:   "+texto);
   document.write("<br>La puntuación del Jugador es "+totalJ);
+}
+
+function finalC(){                               //a esta función la llama pideC
+  var texto="";                                  //la variable texto se construye concatenando una frase y la mano del Juegador
+  for(var i=0;i<manoC.length;i++){
+    texto+=manoC[i].palo+manoC[i].valor+" - ";            //+= es para hacer un acumulador de la variable texto
+  }
+  texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
+  document.write("<br>-La mano del Croupier es:   "+texto);
+  document.write("<br>La puntuación del Croupier es "+totalJ);
 }
 
 function puntuar(mano){                           //vamos a calcular la puntuación de una mano
