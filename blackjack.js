@@ -1,5 +1,5 @@
 // Simulador simplificado del juego de Blackjack
-document.write("<h1>Simulación básica del juego de Blackjack</h1>"); 
+document.write("<h1>Simulación básica del juego de Blackjack</h1><br>"); 
 
                                                   //creación de variables globales
 var naipes=[];                                    //contendrá la baraja completa y desordenada
@@ -32,7 +32,7 @@ function generaBaraja(){                          //Función que da naipes con 5
 function blackjack(){
   jugando = true;
   generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
-  document.write("<h3>Generamos las 52 cartas de la Baraja</h3>");
+  document.write("<h3>Generamos las 52 cartas de la Baraja</h3><br>");
   for(i=0;i<52;i++){
     document.write(naipes[i].palo+naipes[i].valor+" ");
   }
@@ -40,14 +40,14 @@ function blackjack(){
   manoJ[0]=naipes[0];                             //la primera carta de la baraja va para el Jugador
   manoJ[1]=naipes[1];                             //la segunda carta de la baraja va para el Jugador
   usadas=2;                                       //ya se han usado 2 cartas del total de 52
-  document.write("<br><h3>Mano inicial del Jugador</h3>");
+  document.write("<br><h3>Mano inicial del Jugador</h3><br>");
   document.write("Mano inicial del Jugador:  "+manoJ[0].palo+manoJ[0].valor+" - "+manoJ[1].palo+manoJ[1].valor);
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
   document.write("<br>Puntos iniciales del Jugador: "+totalJ);
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
   while(jugando){
     if(totalJ<17){
-      document.write("<h3>El Jugador pide cartas</h3>");
+      document.write("<br><h3>El Jugador pide cartas</h3><br>");
     }
     pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
     while(jugando){                                 //mientras el juego continúe
@@ -57,7 +57,7 @@ function blackjack(){
       manoC[1]=naipes[usadas-1];                    //esta es la segunda carta para el Croupier
       totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
       
-      document.write("<br><h3>Mano inicial del Croupier</h3>");
+      document.write("<br><h3>Mano inicial del Croupier</h3><br>");
       document.write("Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
       totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
       document.write("<br>Puntos iniciales del Croupier: "+totalC);
@@ -158,7 +158,7 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   else {
     document.write("<br>El Jugador se planta.");
     //document.write("<br>la variable jugando es= "+jugando);
-    document.write("<h3>Le toca el turno a Croupier</h3>");
+    document.write("<br><h3>Le toca el turno al Croupier</h3>");
   }
 }
 
