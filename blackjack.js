@@ -114,7 +114,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
     	}
     	else if(totalJ<totalC){
     		imprimeManos;
-    		document.write("El Jugador pierde porque el Croupier tiene más puntos.");
+    		document.write("<br>El Jugador pierde porque el Croupier tiene más puntos.");
     	}
     	else if(totalJ===totalC){
     		imprimeManos;
