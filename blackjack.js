@@ -77,6 +77,8 @@ function blackjack(){
       document.write("<br>Regla: El Croupier pide con menos de 17 y se planta con 17 o más.");
       if(totalC<17){
         document.write("<br><h3>El Croupier pide cartas</h3>");
+      }else if(totalC>=17 && totalC<=21){
+      	document.write("<br>El Croupier se planta.");
       }
       
       pideC();                                      //llamamos a una función que determina si pide el Croupier y cuantas veces
@@ -119,7 +121,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
     }
     else if(totalC<21){
     	if(totalJ>totalC){
-    		imprimeManos();
+    		//imprimeManos();
     		document.write("<br>El Jugador gana porque tiene más puntos.");
     	}
     	else if(totalJ<totalC){
