@@ -90,7 +90,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
   while (totalC<17){
     document.write("<br>El Croupier pide nueva carta.");
     usadas++;                                     //se ha usado una nueva carta 
-    manoC[usadas-1+manoJ.length] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Croupier
+    manoC[usadas-1-manoJ.length] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Croupier
     totalC=puntuar(manoC);                        //ERROR al enviar a la función puntuar la manoC
     finalC();
   }
