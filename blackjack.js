@@ -96,38 +96,38 @@ function pideC(){                                 //REGLA: el Croupier pide con 
   }
   if(totalJ===21){                                  //ahora veamos el resultado final del juego segun los puntos de ambos
     if(totalC < 21){
-    	imprimeManos;
+    	imprimeManos();
     	document.write("<br>El Jugador gana con 21.");
     }
   	else if (totalC===21){
-  		imprimeManos;
+  		imprimeManos();
   		document.write("<br>Se ha producido un empate a 21 puntos.");
   	}
   	else if (totalC>21){
-  		imprimeManos;
+  		imprimeManos();
   		document.write("<br>El Croupier gana con "+totalC);
   	}
 	}
   else if (totalJ<21){
     if(totalC>21){
-    	imprimeManos;
-    	document.write("<br>El Jugador gana. El Croupier se ha pasado");
+    	imprimeManos();
+    	document.write("<br>El Jugador gana. El Croupier se ha pasado.");
     }
     else if(totalC===21){
-    	imprimeManos;
+    	imprimeManos();
     	document.write("<br>El Jugador pierde porque el Croupier tiene 21.");
     }
     else if(totalC<21){
     	if(totalJ>totalC){
-    		imprimeManos;
+    		imprimeManos();
     		document.write("<br>El Jugador gana porque tiene más puntos.");
     	}
     	else if(totalJ<totalC){
-    		imprimeManos;
+    		imprimeManos();
     		document.write("<br>El Jugador pierde porque el Croupier tiene más puntos.");
     	}
     	else if(totalJ===totalC){
-    		imprimeManos;
+    		imprimeManos();
     		document.write("<br>Empate a "+totalJ+" puntos.");
     	}
     }
