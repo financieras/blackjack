@@ -71,7 +71,6 @@ function blackjack(){
       manoC[0]=naipes[usadas-1];                    //la primera carta de la mano del Croupier
       usadas+=1;
       manoC[1]=naipes[usadas-1];                    //esta es la segunda carta para el Croupier
-      totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
       document.write("<br>Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
       totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
       document.write("<br>Puntos iniciales del Croupier: "+totalC);
