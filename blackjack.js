@@ -172,7 +172,7 @@ function finalC(){                               //a esta función la llama pide
   }
   texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
   document.write("<br>-La mano del Croupier es:   "+texto);
-  document.write("<br>La puntuación del Croupier es "+totalJ);
+  document.write("<br>La puntuación del Croupier es "+totalC);
 }
 
 function puntuar(mano){                           //vamos a calcular la puntuación de una mano
