@@ -87,7 +87,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
   if(totalJ===21){                                  //ahora veamos el resultado final del juego segun los puntos de ambos
     if(totalC < 21){
     	imprimeManos;
-    	document.write("El Jugador gana con 21.");
+    	document.write("<br>El Jugador gana con 21.");
     }
   	else if (totalC===21){
   		imprimeManos;
