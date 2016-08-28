@@ -64,7 +64,7 @@ function blackjack(){
       document.write("Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
       totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
       document.write("<br>Puntos iniciales del Croupier: "+totalC);
-      document.write("<br>Regla: El Croupier pide con menos de 17 y se planta con 17 o más.");
+      //document.write("<br>Regla: El Croupier pide con menos de 17 y se planta con 17 o más.");
       if(totalC<17){
         document.write("<br><h3>El Croupier pide cartas</h3>");
       }
