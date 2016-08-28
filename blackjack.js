@@ -99,7 +99,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
     }
     else if(totalC===21){
     	imprimeManos;
-    	document.write("El Jugador pierde porque el Croupier tiene 21");
+    	document.write("<br>El Jugador pierde porque el Croupier tiene 21");
     }
     else if(totalC<21){
     	if(totalJ>totalC){
