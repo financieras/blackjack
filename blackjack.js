@@ -44,21 +44,33 @@ function blackjack(){
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
   document.write("<br>Puntos iniciales del Jugador: "+totalJ);
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
-  while(jugando){
+  if(jugando){
     if(totalJ<17){
       document.write("<br><h3>El Jugador pide cartas</h3>");
     }
-    pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
+    while (totalJ<17){                            //ahora determinamos si pide el Jugador y cuantas veces  
+      document.write("<br>El Jugador pide nueva carta.");
+      usadas++;                                     //se ha usado una nueva carta: usadas=usadas+1 
+      manoJ[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Jugador
+      totalJ=puntuar(manoJ);
+      finalJ();                                       //mientras existen iteraciones no es final de J pero nos interesa que imprima resultados
+    }
+    if(totalJ>21){                                  //ahora veamos si el Jugador se ha pasado o es el turno del Croupier
+      jugando=false;                                 //anotamos que termina el juego
+      document.write("<br>El Jugador se ha pasado. Gana el Croupier.");
+    } else {                                           //esto se cumplirá si: 17 <= totalJ >= 21 
+      document.write("<br>El Jugador se planta.");
+      document.write("<br><h3>Le toca el turno al Croupier</h3>");
+    }
                                                     //aqui el Jugador ya ha terminado y le toca el turno al Croupier
                                                     //salvo que previamente el Jugador hubiera tenido Blackjack o se hubiera pasado
                                                     //en cuyo caso el jugo ya se ha terminado.
-    while(jugando){                                 //mientras el juego continúe
+    if(jugando){                                    //mientras el juego continúe
       usadas+=1;                                    //ahora le toca al Croupier
       manoC[0]=naipes[usadas-1];                    //la primera carta de la mano del Croupier
       usadas+=1;
       manoC[1]=naipes[usadas-1];                    //esta es la segunda carta para el Croupier
       totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
-      
       document.write("<br><h3>Mano inicial del Croupier</h3>");
       document.write("<br>Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
       totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
@@ -142,23 +154,7 @@ function imprimeManos(){                          //muestra en pantalla las mano
 }
 
 
-function pideJ(){                                 //veamos si pide el Jugador y cuantas veces lo hace
-  while (totalJ<17){
-    document.write("<br>El Jugador pide nueva carta.");
-    usadas++;                                     //se ha usado una nueva carta: usadas=usadas+1 
-    manoJ[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Jugador
-    totalJ=puntuar(manoJ);
-    finalJ();                                       //mientras existen iteraciones no es final de J pero nos interesa que imprima resultados
-  }
-  if(totalJ>21){                                  //ahora veamos si el Jugador se ha pasado o es el turno del Croupier
-    jugando=false;                                 //anotamos que termina el juego
-    document.write("<br>El Jugador se ha pasado. Gana el Croupier.");
-  } 
-  else {
-    document.write("<br>El Jugador se planta.");
-    document.write("<br><h3>Le toca el turno al Croupier</h3>");
-  }
-}
+
 
 function finalJ(){                               //a esta función la llaman blacjackJ y pideJ
   var texto="";                                  //la variable texto se construye concatenando una frase y la mano del Juegador
