@@ -1,5 +1,4 @@
 // Simulador simplificado del juego de Blackjack
-document.write("Hola")
 document.write("<h1>Simulación básica del juego de Blackjack</h1>"); 
 
                                                   //creación de variables globales
@@ -33,7 +32,7 @@ function generaBaraja(){                          //Función que da naipes con 5
 function blackjack(){
   jugando = true;
   generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
-  document.write("<h3 {display: inline;}>Generamos las 52 cartas de la Baraja</h3>");
+  document.write("<h3>Generamos las 52 cartas de la Baraja</h3>");
   for(i=0;i<52;i++){
     document.write(naipes[i].palo+naipes[i].valor+" ");
   }
