@@ -1,4 +1,5 @@
 // Simulador simplificado del juego de Blackjack
+document.write("Hola")
 document.write("<h1>Simulación básica del juego de Blackjack</h1>"); 
 
                                                   //creación de variables globales
