@@ -1,5 +1,5 @@
 // Simulador simplificado del juego de Blackjack
-document.write("<h1>Simulación básica del juego de Blackjack</h1><br>"); 
+document.write("<h1>Simulación básica del juego de Blackjack</h1>"); 
 
                                                   //creación de variables globales
 var naipes=[];                                    //contendrá la baraja completa y desordenada
@@ -32,16 +32,15 @@ function generaBaraja(){                          //Función que da naipes con 5
 function blackjack(){
   jugando = true;
   generaBaraja();                                 //es imprescindible ejecutar este programa para generar nueva baraja
-  document.write("<h3>Generamos las 52 cartas de la Baraja</h3><br>");
+  document.write("<br><h3>Generamos las 52 cartas de la Baraja</h3><br>");
   for(i=0;i<52;i++){
     document.write(naipes[i].palo+naipes[i].valor+" ");
   }
-  //document.write("<br>");
   manoJ[0]=naipes[0];                             //la primera carta de la baraja va para el Jugador
   manoJ[1]=naipes[1];                             //la segunda carta de la baraja va para el Jugador
   usadas=2;                                       //ya se han usado 2 cartas del total de 52
-  document.write("<br><h3>Mano inicial del Jugador</h3><br>");
-  document.write("Mano inicial del Jugador:  "+manoJ[0].palo+manoJ[0].valor+" - "+manoJ[1].palo+manoJ[1].valor);
+  document.write("<br><h3>Mano inicial del Jugador</h3>");
+  document.write("<br>Mano inicial del Jugador:  "+manoJ[0].palo+manoJ[0].valor+" - "+manoJ[1].palo+manoJ[1].valor);
   totalJ=puntuar(manoJ);                          //puntuamos las dos primeras cartas de la mano del Jugador
   document.write("<br>Puntos iniciales del Jugador: "+totalJ);
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
@@ -60,8 +59,8 @@ function blackjack(){
       manoC[1]=naipes[usadas-1];                    //esta es la segunda carta para el Croupier
       totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
       
-      document.write("<br><h3>Mano inicial del Croupier</h3><br>");
-      document.write("Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
+      document.write("<br><h3>Mano inicial del Croupier</h3>");
+      document.write("<br>Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
       totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
       document.write("<br>Puntos iniciales del Croupier: "+totalC);
       document.write("<br>Regla: El Croupier pide con menos de 17 y se planta con 17 o más.");
@@ -95,13 +94,13 @@ function pideC(){                                 //REGLA: el Croupier pide con 
   	}
   	else if (totalC>21){
   		imprimeManos;
-  		document.write("El Croupier gana con "+totalC);
+  		document.write("<br>El Croupier gana con "+totalC);
   	}
 	}
   else if (totalJ<21){
     if(totalC>21){
     	imprimeManos;
-    	document.write("El Jugador gana. El Croupier se ha pasado");
+    	document.write("<br>El Jugador gana. El Croupier se ha pasado");
     }
     else if(totalC===21){
     	imprimeManos;
@@ -131,15 +130,15 @@ function imprimeManos(){                          //muestra en pantalla las mano
     texto=texto+manoJ[i].palo+manoJ[i].valor+" - ";
   }
   texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
-  document.write("La mano del Jugador es:  "+texto);
-  document.write("La puntuación del Jugador es "+totalJ);
+  document.write("<br>La mano del Jugador es:  "+texto);
+  document.write("<br>La puntuación del Jugador es "+totalJ);
   texto="";                                 //ahora toca imprimir la información del Croupier
   for(i=0;i<manoC.length;i++){
     texto=texto+manoC[i].palo+manoC[i].valor+" - ";
   }
   texto=texto.substring(texto.length-3, 0);     //quitamos los trés último caracteres para que no se vea " - "
-  document.write("La mano del Croupier es:  "+texto);
-  document.write("La puntuación del Croupier es "+totalC);
+  document.write("<br>La mano del Croupier es:  "+texto);
+  document.write("<br>La puntuación del Croupier es "+totalC);
 }
 
 
@@ -157,7 +156,6 @@ function pideJ(){                                 //veamos si pide el Jugador y 
   } 
   else {
     document.write("<br>El Jugador se planta.");
-    //document.write("<br>la variable jugando es= "+jugando);
     document.write("<br><h3>Le toca el turno al Croupier</h3>");
   }
 }
