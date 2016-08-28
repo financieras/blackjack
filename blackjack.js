@@ -110,7 +110,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
 	}
   else if (totalJ<21){
     if(totalC>21){
-    	imprimeManos();
+    	//imprimeManos();
     	document.write("<br>El Jugador gana. El Croupier se ha pasado.");
     }
     else if(totalC===21){
