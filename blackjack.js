@@ -66,12 +66,12 @@ function blackjack(){
                                                     //salvo que previamente el Jugador hubiera tenido Blackjack o se hubiera pasado
                                                     //en cuyo caso el jugo ya se ha terminado.
     if(jugando){                                    //mientras el juego continúe
+      document.write("<br><h3>Mano inicial del Croupier</h3>");
       usadas+=1;                                    //ahora le toca al Croupier
       manoC[0]=naipes[usadas-1];                    //la primera carta de la mano del Croupier
       usadas+=1;
       manoC[1]=naipes[usadas-1];                    //esta es la segunda carta para el Croupier
       totalC=puntuar(manoC);                        //puntuamos las dos primeras cartas de la mano del Croupier
-      document.write("<br><h3>Mano inicial del Croupier</h3>");
       document.write("<br>Mano inicial del Croupier:  "+manoC[0].palo+manoC[0].valor+" - "+manoC[1].palo+manoC[1].valor);
       totalC=puntuar(manoC);                         //puntuamos las dos primeras cartas de la mano del Croupier
       document.write("<br>Puntos iniciales del Croupier: "+totalC);
@@ -92,7 +92,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
     document.write("<br>El Croupier pide nueva carta.");
     usadas++;                                     //se ha usado una nueva carta 
     manoC[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Croupier
-    totalC=puntuar(manoC);
+    totalC=puntuar(manoC);                        //ERROR al enviar a la función puntuar la manoC
     finalC();
   }
   if(totalJ===21){                                  //ahora veamos el resultado final del juego segun los puntos de ambos
@@ -116,7 +116,7 @@ function pideC(){                                 //REGLA: el Croupier pide con 
     }
     else if(totalC===21){
     	imprimeManos;
-    	document.write("<br>El Jugador pierde porque el Croupier tiene 21");
+    	document.write("<br>El Jugador pierde porque el Croupier tiene 21.");
     }
     else if(totalC<21){
     	if(totalJ>totalC){
