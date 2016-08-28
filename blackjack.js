@@ -47,7 +47,7 @@ function blackjack(){
   blackjackJ();                                   //llama a la función que analiza si existe blackjack del jugador al inicio
   while(jugando){
     if(totalJ<17){
-      document.write("<br><h3>El Jugador pide cartas</h3><br>");
+      document.write("<br><h3>El Jugador pide cartas</h3>");
     }
     pideJ();                                        //llamamos a una función que determina si pide el Jugador y cuantas veces
                                                     //aqui el Jugador ya ha terminado y le toca el turno al Croupier
@@ -66,7 +66,7 @@ function blackjack(){
       document.write("<br>Puntos iniciales del Croupier: "+totalC);
       
       if(totalC<17){
-        document.write("<br><h3>El Croupier pide cartas</h3><br>");
+        document.write("<br><h3>El Croupier pide cartas</h3>");
       }
       
       pideC();                                      //llamamos a una función que determina si pide el Croupier y cuantas veces
@@ -77,9 +77,8 @@ function blackjack(){
 function pideC(){                                 //REGLA: el Croupier pide con 16 o menos y se planta con 17 o más
   jugando=false;                                  //el juego ya termina cuando pideC termine de ejecutarse
   //imprimeManos;
-  //return false;                                    //???????????????????
   while (totalC<17){
-    document.write("<br>El Croupier pide nueva carta.");
+    document.write("El Croupier pide nueva carta.");
     usadas++;                                     //se ha usado una nueva carta 
     manoC[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Croupier
     totalC=puntuar(manoC);
