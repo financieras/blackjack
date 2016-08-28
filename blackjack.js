@@ -26,6 +26,9 @@ function generaBaraja(){                          //Función que da naipes con 5
     naipes[una]=naipes[otra];
     naipes[otra]=temp;
   }
+  naipes[0]="1c";
+  naipes[1]="4c";
+  naipes[2]="6c";
   return naipes;
 }
 
