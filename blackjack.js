@@ -78,11 +78,11 @@ function pideC(){                                 //REGLA: el Croupier pide con 
   jugando=false;                                  //el juego ya termina cuando pideC termine de ejecutarse
   //imprimeManos;
   while (totalC<17){
-    document.write("El Croupier pide nueva carta.");
+    document.write("<br>El Croupier pide nueva carta.");
     usadas++;                                     //se ha usado una nueva carta 
     manoC[usadas-1] = naipes[usadas-1];           //tomamos la carta de la baraja y se la añadimos a la mano del Croupier
     totalC=puntuar(manoC);
-    finalC
+    finalC();
   }
   if(totalJ===21){                                  //ahora veamos el resultado final del juego segun los puntos de ambos
     if(totalC < 21){
